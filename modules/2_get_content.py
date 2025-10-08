@@ -20,7 +20,7 @@ for article in articles:
         print(f"🔄 Loading: {article.title}")
         response = requests.get(article.canonical_url, headers=headers)
         if response.status_code != 200:
-            print(f"Ошибка загрузки: {article.canonical_url}")
+            print(f"Error Loading: {article.canonical_url}")
             continue
 
         soup = BeautifulSoup(response.text, 'html.parser')
